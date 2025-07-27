@@ -1,0 +1,10 @@
+{
+    "library_timing": "The library is open from 8:00 AM to 10:00 PM from Monday to Saturday. On Sundays, it operates from 9:00 AM to 5:00 PM.",
+    "membership_info": "To become a member, visit the library reception with a valid ID. Students and faculty can register for free, while external members must pay an annual fee of Rs. 50.",
+    "book_search": "You can search for books using our online catalog at https://library.example.com. Alternatively, ask the librarian for assistance.",
+    "borrowing_rules": "Students can borrow up to 5 books for 14 days. Faculty members can borrow 10 books for 30 days. A fine of Rs. 1.0 per day applies for overdue books.",
+    "return_policy": "Books should be returned on or before the due date. Late returns will incur a fine of Rs. 3.0 per day per book.",
+    "digital_resources": "The library offers access to e-books, research papers, and online journals through our digital portal at https://library.example.com/digital.",
+    "events_and_workshops": "We host weekly book clubs, author talks, and research workshops. Check our event calendar at https://library.example.com/events.",
+    "contact_info": "You can contact the library at (123) 456-7890 or email us at library@university.edu."
+  }

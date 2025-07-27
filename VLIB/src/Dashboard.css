@@ -1,0 +1,442 @@
+/* ======== GLOBAL STYLES ======== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+/* ======== DASHBOARD SECTION ======== */
+.dashboard {
+    background-color: #edede9;
+    padding: 0px 0;
+    text-align: center;
+}
+
+.dashboard h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #1B263B;
+    margin-bottom: 20px;
+}
+
+/* ======== HERO SECTION ======== */
+.hero {
+    height: 550px;
+    display: flex;
+    align-items: center;
+    text-align: justify;
+    justify-content: space-between;
+    padding: 0 60px;
+}
+
+/* Hero Text */
+.herotext {
+    max-width: 500px;
+    color: black;
+    line-height: 1.9;
+    padding-right: 50px;
+}
+
+.herotext h2 {
+    font-size: 28px;
+    text-align: left;
+    font-weight: bold;
+    color: #1B263B;
+    margin-bottom: 15px;
+}
+
+.herotext p {
+    font-size: 16px;
+    color: #444;
+    padding-bottom: 20px;
+    
+}
+
+/* Search Bar */
+.herotext input {
+    border-radius: 20px;
+    width: 250px;
+    height: 40px;
+    border: 2px solid #7c7d7d;
+    padding: 5px 15px;
+    outline: none;
+    transition: border 0.3s ease-in-out;
+}
+
+.herotext input:focus {
+    border-color: #1B263B;
+}
+
+/* Auto-Suggestions */
+.suggestions {
+    list-style: none;
+    margin-top: 5px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-height: 200px;
+    overflow-y: auto;
+    position: absolute;
+    width: 250px;
+    z-index: 10;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.suggestion-item:hover {
+    background: #f0f0f0;
+}
+
+/* ======== BOOK SLIDER ======== */
+.hero-slider {
+    width: 320px;
+    height: 420px;
+}
+
+.mySwiper {
+    width: 100%;
+    height: 100%;
+}
+
+/* Swiper Slide */
+.book-slide {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Center Slide */
+.swiper-slide-active {
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Side Slides (faded effect) */
+.swiper-slide-prev,
+.swiper-slide-next {
+    transform: scale(0.85);
+    opacity: 0.6;
+}
+
+/* Book Cover */
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.book-slide:hover .book-cover {
+    transform: scale(1.05);
+}
+
+/* Book Details Overlay */
+.book-details {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 12px;
+    text-align: center;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+/* ====== SUGGESTED FOR YOU SECTION ====== */
+.suggested-section {
+    text-align: center;
+    padding: 30px 0;
+    background: #edede9;
+}
+
+.suggested-section h2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #1B263B;
+    margin-bottom: 50px;
+}
+
+/* BOOK CARD CONTAINER */
+.book-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* INDIVIDUAL BOOK CARD */
+.book-card {
+    position: relative;
+    width: 200px;
+    height: 280px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 4px 6px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.book-card:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 6px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* BOOK COVER */
+.book-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.book-card:hover .book-cover {
+    opacity: 0.85;
+}
+
+/* BOOK DETAILS */
+.book-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+    transition: background 0.3s ease-in-out;
+}
+
+.book-card:hover .book-info {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.book-info h3 {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.book-info p {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+/* ======== USER PROFILE SECTION ======== */
+.user-profile {
+    height: 400px;
+    background: url('https://images.pexels.com/photos/247899/pexels-photo-247899.jpeg?auto=compress&cs=tinysrgb&w=800') center/cover;
+    background-attachment: fixed;
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dark overlay for better readability */
+.user-profile::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); 
+}
+
+/* Profile Heading */
+.user-profile h2 {
+    position: relative;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.2s ease-in-out;
+    top:-80px;
+}
+
+/* ======== USER CARD SECTION ======== */
+.usercard-container {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+    position: absolute;
+    right: 120px;
+    top: 200px;
+}
+
+/* User Cards */
+.usercard {
+    width: 260px;
+    height: 140px;
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    opacity: 0.7;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    box-shadow: 4px 6px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    font-weight: bold;
+    text-align: center;
+    padding: 15px;
+    cursor: pointer;
+}
+
+/* Hover Effect */
+.usercard:hover {
+    transform: scale(1.1);
+    opacity: 1;
+    box-shadow: 6px 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Usercard Text */
+.usercard h3 {
+    font-size: 22px;
+    margin-bottom: 8px;
+    color: #004d99;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.usercard p {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Subtle color change on hover */
+.usercard:hover p {
+    color: #0073e6;
+}
+
+/* ✨ Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*  Announcements Section */
+
+.announcement-section {
+    padding: 50px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+
+}
+
+.announcement-title {
+    font-size: 32px;
+    color: #1b263b;
+    margin-bottom: 30px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*  Announcements Container */
+.announcement-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+/*  Glassmorphism Effect */
+.announcement-card {
+    width: 300px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 2px 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/*  Hover Effect */
+.announcement-card:hover {
+    transform: scale(1.05);
+    opacity: 1;
+    box-shadow: 4px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*  Announcement Header */
+.announcement-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*  Announcement Type Styles */
+.announcement-type {
+    padding: 8px 12px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    background-color: rgba(0, 0, 0, 0.5); /* Uniform background color */
+}
+
+/*  Date */
+.announcement-date {
+    font-size: 14px;
+    color: #555;
+}
+
+/* Text */
+.announcement-heading {
+    font-size: 20px;
+    color: #222;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.announcement-text {
+    font-size: 16px;
+    color: #444;
+    font-family: 'Poppins', sans-serif;
+}
+
+.no-announcements {
+    font-size: 18px;
+    color: #777;
+    font-family: 'Poppins', sans-serif;
+}

@@ -1,0 +1,230 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i');
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+  padding: 0;
+  background-color: #D2DBDD;
+}
+
+.books-page {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.page-title {
+  font-size: 32px;
+  color: #1B263B;
+  margin-bottom: 30px;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  max-width: 960px;
+  margin: auto;
+}
+
+/* Card Styling */
+.card {
+  width: 260px;
+  background: #ffffff;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Hover Effect */
+.card__img,
+.card__img--hover {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 235px;
+  transition: opacity 0.2s ease-out;
+}
+
+.card__img {
+  visibility: hidden;
+}
+
+.card__img--hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 1;
+}
+
+.card:hover .card__img--hover {
+  opacity: 0.3;
+}
+
+/* Card Info */
+.card__info {
+    display: flex;
+    flex-direction:column;
+    flex:1;
+  padding: 16px;
+  text-align: left;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.card__title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 5px 0;
+  color: #1B263B;
+}
+
+.card__category {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #868686;
+  font-family: 'Raleway', sans-serif;
+}
+
+.card__by {
+  font-size: 12px;
+  font-weight: 500;
+  font-family: 'Raleway', sans-serif;
+}
+
+.card__author {
+  font-weight: 600;
+  text-decoration: none;
+  color: #AD7D52;
+}
+
+/* Wishlist Button */
+.wishlist-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  background: #dee2e6;
+  color: #1B263B;
+}
+
+.wishlist-btn:hover {
+  background: #adb5bd;
+}
+
+.wishlist-btn.added {
+  background: #ff6b6b;
+  color: white;
+}
+
+/* View Details Button */
+.details-btn {
+    width: 100%;
+    padding: 10px;
+    margin-top: 8px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    background: #1B263B;
+    color: white;
+  }
+  
+  .details-btn:hover {
+    background: #415A77;
+  }
+  
+  /* Popup Modal Styles */
+  .book-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .popup-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    text-align: left;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #1B263B;
+  }
+  
+  .close-btn:hover {
+    color: #415A77;
+  }
+  
+  .popup-header {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .popup-thumbnail {
+    width: 100px;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .popup-details h2 {
+    margin: 0;
+    color: #1B263B;
+  }
+  
+  .popup-details p {
+    margin: 4px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .rating {
+    font-weight: bold;
+    color: #E63946;
+  }
+  
+  .popup-description {
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555;
+  }
+  

@@ -1,0 +1,280 @@
+/* BookDetails.css */
+
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+  }
+  
+  body {
+    
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
+  }
+  
+  /* Book Details Page */
+  .book-details-page {
+    background-color: white;
+    border-radius: 10px;
+    max-width: 1200px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+  }
+  
+  .book-details-page h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #333;
+    margin-bottom: 30px;
+    font-weight: bold;
+    border-left: #2c3e50;
+    border-left-width: 5px;
+    margin-left: 100px;
+    left:1000px;
+  }
+  
+  .book-details-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  
+  .book-details-content img {
+    max-width: 500px;
+    height: 450px;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    line-height: 55px;
+    margin-bottom:20px ;
+  }
+  
+
+
+  /* Flexbox for Book Details Content */
+  .book-details-content {
+    display: flex;
+    gap: 25px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  
+  .image-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+
+  
+  .book-info-below-image {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px;
+    
+  }
+  
+  /* Book Info on the Right */
+  .bookd-info {
+    flex: 2;
+    max-width: 650px;
+    padding-left: 30px;
+    top:-30;
+  }
+  
+  .bookd-info h3 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-weight: 600;
+  }
+  
+  .bookd-info p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 12px;
+  }
+  
+  .bookd-info .rating {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #f39c12;
+    margin-bottom: 10px;
+  }
+  
+  .bookd-info .rating span {
+    color: #333;
+  }
+  
+  .bookd-info .description {
+    font-size: 1rem;
+    color: #777;
+    line-height: 1.6;
+    margin-bottom: 15px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .book-details-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .bookd-info {
+      text-align: center;
+      padding-left: 0;
+    }
+  
+    .book-details-page h2 {
+      font-size: 2.2rem;
+    }
+  
+    .bookd-info h3 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .book-details-page {
+      padding: 15px;
+    }
+  
+    .book-details-page h2 {
+      font-size: 2rem;
+    }
+  
+    .bookd-info h3 {
+      font-size: 1.6rem;
+    }
+  
+    .add-comment button {
+      font-size: 1rem;
+    }
+  }
+  
+  
+  /* Comments Section */
+  .comments-section {
+    margin-top: 40px;
+  }
+  
+  .comments-section h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 25px;
+    font-weight: bold;
+  }
+  
+  .comment-list {
+    margin-bottom: 30px;
+  }
+  
+  .comment-item {
+    background-color: #f9f9f9;
+    border-left: 5px solid #2c3e50;
+    padding: 18px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .comment-item p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+  
+  .comment-item .username {
+    font-weight: bold;
+    color: #2c3e50;
+    margin-bottom: 8px;
+  }
+  
+  /* Add Comment Section */
+  .add-comment {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 30px;
+  }
+  
+  .add-comment textarea {
+    resize: vertical;
+    min-height: 120px;
+    max-height: 220px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #f7f7f7;
+    transition: border-color 0.3s ease;
+  }
+  
+  .add-comment textarea:focus {
+    border-color: #2c3e50;
+    outline: none;
+  }
+  
+  .add-comment button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .add-comment button:hover {
+    background-color: #2c3e50;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .book-details-content {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+    }
+  
+    .book-info {
+      text-align: center;
+    }
+  
+    .book-details-page h2 {
+      font-size: 2.2rem;
+    }
+  
+    .book-info h3 {
+      font-size: 1.8rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .book-details-page {
+      padding: 15px;
+    }
+  
+    .book-details-page h2 {
+      font-size: 2rem;
+    }
+  
+    .book-info h3 {
+      font-size: 1.6rem;
+    }
+  
+    .add-comment button {
+      font-size: 1rem;
+    }
+  }
