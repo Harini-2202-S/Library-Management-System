@@ -10,7 +10,7 @@ const Books = () => {
 
   // Fetch books from the API
   useEffect(() => {
-    fetch("http://127.0.0.1:5000/books")
+    fetch("https://library-management-system-5bjb.onrender.com/books")
       .then((response) => response.json())
       .then((data) => setBooks(data))
       .catch((error) => console.error("Error fetching books:", error));
@@ -18,7 +18,7 @@ const Books = () => {
 
   // Fetch the wishlist from the API when the component mounts
   useEffect(() => {
-    fetch(`http://127.0.0.1:5000/get_wishlist/${userId}`)
+    fetch(`https://library-management-system-5bjb.onrender.com/get_wishlist/${userId}`)
       .then((response) => response.json())
       .then((data) => setWishlist(data))
       .catch((error) => console.error("Error fetching wishlist:", error));
@@ -29,7 +29,7 @@ const Books = () => {
     const isInWishlist = wishlist.some((b) => b.isbn13 === book.isbn13);
     const method = isInWishlist ? "DELETE" : "POST"; // Use DELETE for removal
 
-    fetch("http://127.0.0.1:5000/add_to_wishlist", {
+    fetch("https://library-management-system-5bjb.onrender.com/add_to_wishlist", {
       method,
       headers: {
         "Content-Type": "application/json",

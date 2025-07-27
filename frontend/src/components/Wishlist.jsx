@@ -9,7 +9,7 @@ const Wishlist = () => {
     const userId = 1;  // Replace with actual logged-in user's ID
 
     // Fetch wishlist for the user from the backend
-    fetch(`http://127.0.0.1:5000/get_wishlist/${userId}`)
+    fetch(`https://library-management-system-5bjb.onrender.com/get_wishlist/${userId}`)
       .then((response) => response.json())
       .then((data) => setWishlist(data))
       .catch((error) => console.error("Error fetching wishlist:", error));
@@ -19,7 +19,7 @@ const Wishlist = () => {
     const userId = 1; // Replace with actual logged-in user's ID
 
     // Send a request to the backend to remove the book from the wishlist
-    fetch(`http://127.0.0.1:5000/remove_from_wishlist/${userId}`, {
+    fetch(`https://library-management-system-5bjb.onrender.com/remove_from_wishlist/${userId}`, {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",

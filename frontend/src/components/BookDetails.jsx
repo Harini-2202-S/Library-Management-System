@@ -16,7 +16,7 @@ const BookDetails = () => {
     console.log("Title from URL:", title);
 
     // Fetch book details from the API using the title
-    fetch(`http://127.0.0.1:5000/get_book_by_title/${encodeURIComponent(title)}`)
+    fetch(`https://library-management-system-5bjb.onrender.com/get_book_by_title/${encodeURIComponent(title)}`)
       .then((response) => {
         console.log("Response status:", response.status);
         if (!response.ok) {
@@ -36,7 +36,7 @@ const BookDetails = () => {
       });
 
     // Fetch comments for the book
-    fetch(`http://127.0.0.1:5000/get_comments/${encodeURIComponent(title)}`)
+    fetch(`https://library-management-system-5bjb.onrender.com/get_comments/${encodeURIComponent(title)}`)
       .then((response) => response.json())
       .then((data) => setComments(data))
       .catch((error) => console.error("Error fetching comments:", error));

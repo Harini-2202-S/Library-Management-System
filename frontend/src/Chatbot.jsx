@@ -10,7 +10,7 @@ const Chatbot = () => {
 
   // Fetch library data on component mount
   useEffect(() => {
-    fetch("/libraryData.json")
+    fetch("https://library-management-system-5bjb.onrender.com/libraryData.json")
       .then((response) => response.json())
       .then((data) => setLibraryData(data))
       .catch((error) => console.error("Error loading library data:", error));
