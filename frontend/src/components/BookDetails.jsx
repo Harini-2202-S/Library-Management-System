@@ -56,7 +56,7 @@ const BookDetails = () => {
   
     // Send the new comment to the backend API
     axios
-      .post("http://127.0.0.1:5000/add_comment", commentData)
+      .post("https://library-management-system-5bjb.onrender.com/add_comment", commentData)
       .then((response) => {
         setComments([...comments, { comment: newComment }]); // Add new comment to the list
         setNewComment(""); // Clear the input field

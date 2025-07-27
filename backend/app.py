@@ -7,6 +7,12 @@ import csv
 app = Flask(__name__)
 CORS(app)  # Allow frontend to access the API
 
+@app.route('/', methods=['GET'])
+def index():
+    return jsonify({"message": "Backend is live and running!"})
+
+
+
 # MySQL connection setup
 def get_db_connection():
     return mysql.connector.connect(
