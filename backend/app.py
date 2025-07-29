@@ -5,7 +5,7 @@ import csv
 
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend to access the API
+CORS(app)  
 
 @app.route('/', methods=['GET'])
 def index():
@@ -17,9 +17,9 @@ def index():
 def get_db_connection():
     return mysql.connector.connect(
         host="localhost",
-        user="Monesha",  # Replace with your MySQL username
-        password="SriRam33Lak$",  # Replace with your MySQL password
-        database="vit"  # Replace with your database name
+        user="Monesha",  
+        password="SriRam33Lak$",  
+        database="vit"  
     )
 
 # API to fetch books from CSV
@@ -40,11 +40,11 @@ def get_books():
                     "thumbnail": row.get("thumbnail", ""),
                     "description": row.get("description", "No description available."),
                     "published_year": row.get("published_year", "Unknown"),
-                    "average_rating": float(row.get("average_rating", 0)),  # Convert to float
-                    "num_pages": int(row.get("num_pages", 0)),  # Convert to integer
-                    "ratings_count": int(row.get("ratings_count", 0)),  # Convert to integer
+                    "average_rating": float(row.get("average_rating", 0)), 
+                    "num_pages": int(row.get("num_pages", 0)),  
+                    "ratings_count": int(row.get("ratings_count", 0)), 
                 })
-                if len(books) >= 48:  # Fetch 50 books instead of just 15
+                if len(books) >= 48: 
                     break
         return jsonify(books), 200
     except Exception as e:
@@ -70,7 +70,7 @@ def add_to_wishlist():
     cursor = conn.cursor()
 
     try:
-        # Insert book into the wishlist table
+        
         cursor.execute('''
             INSERT INTO wishlist (user_id, isbn13, title, subtitle, authors, categories, 
                                   thumbnail, description, published_year, average_rating, 
@@ -168,9 +168,9 @@ def get_book_by_title(title):
                         "thumbnail": row.get("thumbnail", ""),
                         "description": row.get("description", "No description available."),
                         "published_year": row.get("published_year", "Unknown"),
-                        "average_rating": float(row.get("average_rating", 0)),  # Convert to float
-                        "num_pages": int(row.get("num_pages", 0)),  # Convert to integer
-                        "ratings_count": int(row.get("ratings_count", 0)),  # Convert to integer
+                        "average_rating": float(row.get("average_rating", 0)),
+                        "num_pages": int(row.get("num_pages", 0)),  
+                        "ratings_count": int(row.get("ratings_count", 0)),  
                     }
                     break
         
@@ -228,7 +228,7 @@ def add_comment():
 
     # Extract data from the request
     user_id = data.get('user_id')
-    book_title = data.get('title')  # Change to 'title' from 'isbn13' to match the schema
+    book_title = data.get('title')  
     comment = data.get('comment')
 
     # Validate the input
@@ -249,7 +249,7 @@ def add_comment():
         return jsonify({"message": "Comment added successfully"}), 200
     except Exception as e:
         conn.rollback()
-        print(f"Error: {str(e)}")  # Log the error
+        print(f"Error: {str(e)}")  
         return jsonify({"error": "Internal server error", "message": str(e)}), 500
     finally:
         cursor.close()
@@ -300,11 +300,8 @@ def get_comments_by_title(title):
         cursor.close()
         conn.close()
 
-# if __name__ == '__main__':
-#     app.run(debug=True)
-
-# testing deployment change
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port, debug=True)
+
